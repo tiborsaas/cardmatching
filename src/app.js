@@ -6,8 +6,8 @@
 
 import Card from './components/card';
 import UI from './components/ui';
-import {shuffle, random} from './utils';
-import {cardPool} from './constants';
+import { shuffle, random } from './utils';
+import { cardPool } from './constants';
 import Dispatcher from './messageBus';
 
 const GameUI = new UI();
@@ -46,9 +46,9 @@ const Game = {
 
     getRandomCardTypes() {
         const gameSet = [];
-        while(gameSet.length < this.cardPairs) {
+        while (gameSet.length < this.cardPairs) {
             let randomItem = random(cardPool.length);
-            if(!gameSet.includes(randomItem)) {
+            if (!gameSet.includes(randomItem)) {
                 gameSet.push(randomItem);
             }
         }
@@ -62,7 +62,7 @@ const Game = {
         return shuffle(cardTypes);
     },
 
-    registerCardClickEvent () {
+    registerCardClickEvent() {
         Dispatcher.subscribe('CARD-CLICK', cardObj => {
             if (this.clickPair.length == 2) {
                 return;
@@ -74,9 +74,9 @@ const Game = {
             if (this.clickPair.length == 2) {
                 if (this.checkPairs()) {
                     this.revealPair();
+                    this.revealedCards += 2;
                     this.clickPair = [];
-                }
-                else {
+                } else {
                     // reset cards
                     setTimeout(this.hidePair.bind(this), 1234);
                 }
