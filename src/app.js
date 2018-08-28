@@ -4,7 +4,6 @@
  * The app uses a similar approach to flux, the pub/sub pattern
  */
 
-import Card from './components/card';
 import UI from './components/ui';
 import { shuffle, random } from './utils';
 import { cardPool } from './constants';
