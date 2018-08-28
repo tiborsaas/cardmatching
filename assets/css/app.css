@@ -140,15 +140,60 @@ section.game-area header .best span {
  */
 
 section.game-area .cards {
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
-    flex: 1;
     padding-bottom: 1rem;
 }
 
 section.game-area .cards div {
-    background: tomato;
-    width: 100%;
+    border-radius: 7px;
+    background-color: #fff;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+section.game-area .cards div.revealed {
+    box-shadow: none;
+    background-color: transparent;
+    opacity: 0.5;
+}
+
+/**
+ * Card images
+ */
+
+.react {
+    background-image: url(../images/cards/react.png);
+}
+.angular {
+    background-image: url(../images/cards/angular.png);
+}
+.d3 {
+    background-image: url(../images/cards/d3.png);
+}
+.jenkins {
+    background-image: url(../images/cards/jenkins.png);
+}
+.postcss {
+    background-image: url(../images/cards/postcss.png);
+}
+.redux {
+    background-image: url(../images/cards/redux.png);
+}
+.sass {
+    background-image: url(../images/cards/sass.png);
+}
+.supercharge {
+    background-image: url(../images/cards/supercharge.png);
+}
+.ts {
+    background-image: url(../images/cards/ts.png);
+}
+.webpack {
+    background-image: url(../images/cards/webpack.png);
 }
