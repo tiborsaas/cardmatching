@@ -58,4 +58,16 @@ export default class UI {
         let count = parseInt(tryCounter.textContent);
         tryCounter.textContent = ++count;
     }
+
+    setHigh(score) {
+        const tryCounter = document.querySelector('.tries span');
+        let count = parseInt(tryCounter.textContent);
+
+        const bestCounter = document.querySelector('.best span');
+        const currentCount = parseInt(bestCounter.textContent);
+
+        if(count < currentCount || currentCount === 0) {
+            bestCounter.textContent = ++count;
+        }
+    }
 }

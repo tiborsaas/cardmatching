@@ -84,6 +84,11 @@ const Game = {
                     this.revealPair();
                     this.revealedCards += 2;
                     this.clickPair = [];
+
+                    if(this.revealedCards == this.gamePairs.length) {
+                        alert('CONGRATS YOU WON!!!');
+                        GameUI.setHigh(this.tr);
+                    }
                 } else {
                     // reset cards
                     setTimeout(this.hidePair.bind(this), 1234);
