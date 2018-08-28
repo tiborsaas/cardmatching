@@ -9,6 +9,33 @@ body {
     background: #f2f2f2;
 }
 
+/**
+ * Buttons
+ */
+
+button {
+    padding: .9rem 1.2rem;
+    border-radius: 2px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+button.red {
+    background: #ff3000;
+    color: #fff;
+}
+
+button.hollow {
+    background: transparent;
+    border: 2px solid #212121;
+}
+
+/**
+ * Header styles
+ */
+
 header.top {
     background: #212121;
     height: 4rem;
@@ -34,4 +61,25 @@ header.top h1 {
 
 header.top article {
     margin: auto;
+    display: flex;
+    color: #b3b3b3;
+}
+
+header.top article label {
+    line-height: 3rem;
+    margin-right: .5rem;
+    font-size: 0.9rem;
+}
+
+header.top .select-wrapper {
+    padding: .7rem 1.2rem;
+    position: relative;
+    background: #fff;
+    margin-right: 1rem;
+    border-radius: 2px;
+}
+
+header.top .select-wrapper select {
+    border: none;
+    font-size: 1.5rem;
 }
