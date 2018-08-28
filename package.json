@@ -1,0 +1,22 @@
+{
+  "name": "memorygame",
+  "version": "1.0.0",
+  "description": "Basic game for take home project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiborsaas/cardmatching.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiborsaas/cardmatching/issues"
+  },
+  "homepage": "https://github.com/tiborsaas/cardmatching#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7"
+  }
+}
