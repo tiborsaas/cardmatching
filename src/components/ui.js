@@ -37,7 +37,7 @@ export default class UI {
     flipCard(i) {
         const cards = this.cardRoot.querySelectorAll('div');
         cards[i].classList.remove('hidden');
-        cards[i].classList.add('flipped');
+        cards[i].classList.add('revealed');
     }
 
     incrementTries() {

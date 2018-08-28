@@ -16,6 +16,7 @@ const Game = {
     gamePairs: [], // stores the correct solution indexes
     cardPairs: 5, // in this case 10 cards will be generated
     clickPair: [], // stores the cards the user has clicked
+    revealedCards: 0, // how many cards are successfully revealed?
 
     init(pairs) {
         this.cardPairs = pairs;
