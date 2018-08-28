@@ -158,6 +158,10 @@ section.game-area .cards div {
     cursor: pointer;
 }
 
+section.game-area .cards div.hidden {
+    background-image: none;
+}
+
 section.game-area .cards div.revealed {
     box-shadow: none;
     background-color: transparent;

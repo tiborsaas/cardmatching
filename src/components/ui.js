@@ -10,6 +10,7 @@ export default class UI {
         console.log(solutionSet);
         solutionSet.forEach(cardIndex => {
             const card = document.createElement('div');
+            card.classList.add('hidden');
             card.classList.add(cardPool[cardIndex])
             this.cardRoot.appendChild(card);
 
