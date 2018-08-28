@@ -39,4 +39,10 @@ export default class UI {
         cards[i].classList.remove('hidden');
         cards[i].classList.add('flipped');
     }
+
+    incrementTries() {
+        const tryCounter = document.querySelector('.tries span');
+        let count = parseInt(tryCounter.textContent);
+        tryCounter.textContent = ++count;
+    }
 }

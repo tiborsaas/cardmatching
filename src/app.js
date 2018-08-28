@@ -23,20 +23,7 @@ const Game = {
 
         GameUI.createGameCards(this.gamePairs);
 
-        Dispatcher.subscribe('CARD-CLICK', cardObj => {
-            this.clickPair.push(cardObj);
-            GameUI.revealCard(cardObj.index);
-
-            if(this.clickPair.length == 2) {
-                if(this.checkPairs()) {
-                    this.revealPair();
-                    this.clickPair = [];
-                } else {
-                    // reset cards
-                    setTimeout(this.hidePair.bind(this), 1234);
-                }
-            }
-        });
+        this.registerCardClickEvent();
     },
 
     checkPairs() {
@@ -73,6 +60,29 @@ const Game = {
         // shuffle array
         return shuffle(cardTypes);
     },
+
+    registerCardClickEvent () {
+        Dispatcher.subscribe('CARD-CLICK', cardObj => {
+            if (this.clickPair.length == 2) {
+                return;
+            }
+
+            this.clickPair.push(cardObj);
+            GameUI.revealCard(cardObj.index);
+
+            if (this.clickPair.length == 2) {
+                if (this.checkPairs()) {
+                    this.revealPair();
+                    this.clickPair = [];
+                }
+                else {
+                    // reset cards
+                    setTimeout(this.hidePair.bind(this), 1234);
+                }
+                GameUI.incrementTries();
+            }
+        });
+    }
 }
 
 Game.init(5);
