@@ -5,6 +5,8 @@ export default class UI {
     constructor(deckSize) {
         this.deckSize = deckSize;
         this.cardRoot = document.querySelector('.cards');
+
+        this.addRestartEvent();
     }
 
     createGameCards(solutionSet) {
@@ -24,6 +26,12 @@ export default class UI {
         });
     }
 
+    addRestartEvent() {
+        document.querySelector('.game-area button').addEventListener('click', e => {
+            Dispatcher.dispatch('RESTART-GAME');
+        });
+    }
+
     revealCard(i) {
         const cards = this.cardRoot.querySelectorAll('div');
         cards[i].classList.remove('hidden');
@@ -38,6 +46,11 @@ export default class UI {
         const cards = this.cardRoot.querySelectorAll('div');
         cards[i].classList.remove('hidden');
         cards[i].classList.add('revealed');
+    }
+
+    resetTries() {
+        const tryCounter = document.querySelector('.tries span');
+        tryCounter.textContent = 0;
     }
 
     incrementTries() {

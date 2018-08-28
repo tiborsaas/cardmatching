@@ -17,14 +17,22 @@ const Game = {
     cardPairs: 5, // in this case 10 cards will be generated
     clickPair: [], // stores the cards the user has clicked
     revealedCards: 0, // how many cards are successfully revealed?
+    gameStarted: false,
 
     init(pairs) {
         this.cardPairs = pairs;
         this.gamePairs = this.generateSolutionSet(this.getRandomCardTypes());
+        this.clickPair = [];
+        this.revealedCards = 0;
 
+        GameUI.resetTries();
         GameUI.createGameCards(this.gamePairs);
 
-        this.registerCardClickEvent();
+        if(!this.gameStarted) {
+            this.registerCardClickEvent();
+            this.registerRestartEvent();
+        }
+        this.gameStarted = true;
     },
 
     checkPairs() {
@@ -82,6 +90,13 @@ const Game = {
                 }
                 GameUI.incrementTries();
             }
+        });
+    },
+
+    registerRestartEvent() {
+        Dispatcher.subscribe('RESTART-GAME', () => {
+            console.log('restarting');
+            this.init(this.cardPairs);
         });
     }
 }
