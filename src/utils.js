@@ -19,5 +19,5 @@ export function shuffle(array) {
 }
 
 export function random(max) {
-    return Math.round(Math.random() * max);
+    return Math.floor(Math.random() * max);
 }
