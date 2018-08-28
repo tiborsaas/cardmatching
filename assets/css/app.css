@@ -84,3 +84,43 @@ header.top .select-wrapper select {
     border: none;
     font-size: 1.5rem;
 }
+
+/**
+ * Game area: common
+ */
+
+section.game-area {
+    width: 55rem;
+    margin: auto;
+}
+
+/**
+ * Game area: header
+ */
+
+section.game-area header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    color: #848484;
+    font-size: .9rem;
+}
+
+section.game-area header span {
+    color: #000;
+}
+
+section.game-area header .tries span {
+    font-size: 1.2rem;
+    position: relative;
+    top: .1rem;
+}
+section.game-area header .best {
+    width: 2rem;
+    text-align: center;
+}
+
+section.game-area header .best span {
+    font-size: 2.5rem;
+}
