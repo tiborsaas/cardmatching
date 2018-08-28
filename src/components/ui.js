@@ -1,12 +1,18 @@
+import {cardPool} from '../constants';
 
 export default class UI {
     constructor(deckSize) {
         this.deckSize = deckSize;
+        this.cardRoot = document.querySelector('.cards');
     }
 
-    createGameCards() {
-        for (le i = 0; i < this.deckSize; i++) {
+    createGameCards(solutionSet) {
+        console.log(solutionSet);
+        solutionSet.forEach(cardIndex => {
+            const card = document.createElement('div');
+            card.classList.add(cardPool[cardIndex])
+            this.cardRoot.appendChild(card);
 
-        }
+        });
     }
 }

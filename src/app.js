@@ -5,10 +5,9 @@
  */
 
 import Card from './components/card';
-import UI from './components/card';
+import UI from './components/ui';
 import {shuffle, random} from './utils';
-
-const cardPool = ['react', 'angular', 'd3', 'jenkins', 'postcss', 'redux', 'sass', 'supercharge', 'ts', 'webpack'];
+import {cardPool} from './constants';
 
 const Game = {
     gamePairs: [], // stores the correct solution indexes
@@ -16,7 +15,10 @@ const Game = {
 
     init(pairs) {
         this.cardPairs = pairs;
-        console.log(this.generateSolutionSet(this.getRandomCardTypes()));
+        this.gamePairs = this.generateSolutionSet(this.getRandomCardTypes());
+
+        const GameUI = new UI();
+        GameUI.createGameCards(this.gamePairs);
     },
 
     getRandomCardTypes() {
@@ -36,7 +38,6 @@ const Game = {
         // shuffle array
         return shuffle(cardTypes);
     },
-
 }
 
 Game.init(5);
